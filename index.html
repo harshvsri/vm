@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      .screen {
+        height: 100%;
+        background-color: #010409;
+        color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+          font-size: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen">
+      <h1>Welcome to Harsh's server.</h1>
+    </div>
+    <script>
+      const protocol = window.location.protocol === "https" ? "wss" : "ws";
+      const ws = new WebSocket(`${protocol}://${window.location.host}`);
+
+      ws.onmessage = (event) => {
+        console.log(event);
+      };
+    </script>
+  </body>
+</html>
