@@ -37,7 +37,7 @@
       <h1>Welcome to Harsh's server.</h1>
     </div>
     <script>
-      const protocol = window.location.protocol === "https" ? "wss" : "ws";
+      const protocol = window.location.protocol === "https:" ? "wss" : "ws";
       const ws = new WebSocket(`${protocol}://${window.location.host}`);
 
       ws.onmessage = (event) => {
